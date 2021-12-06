@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int num, a, b, c, revnum;
+    cout << "Enter a 3 digit number.\n ";
+    cin >> num;
+    if (num > 99 and num < 1000){
+        a= num % 10;
+        num = num/10;
+        b = num % 10;
+        num = num/10;
+        c = num;
+        revnum = (100*a) + (10*b) + (c);
+        cout << "The reversed number is \n" <<revnum ;
+    } else {
+        cout << "The number you've entered is out of range\n";}
+    return 0;
+}
