@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main() {
+   int a, b;
+   cout << "Enter the first value.\n";
+   cin >> a;
+   cout << "Enter the second value.\n";
+   cin >> b;
+   a = a+b;
+   b= a-b;
+   a= a-b;
+   cout << "Your final first value is: "<< a;
+   cout << "\n Your final second value is: "<< b;
+   
+    return 0;
+}
