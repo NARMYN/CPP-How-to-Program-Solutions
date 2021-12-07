@@ -1,0 +1,17 @@
+// Write a program to calculate the total expenses. Quantity and price per item are input by the user and discount of 10% is offered if the expense is more than 5000.
+#include <iostream>
+using namespace std;
+int main() {
+    double price, expense;
+    int qty;
+    cout << "Enter the price per item of the items bought.\n";
+    cin >>  price;
+    cout << "Enter the number of items bought.\n";
+    cin >> qty;
+    expense = qty * price;
+    if ( expense > 5000){
+        expense = (0.90)* expense;
+        cout<< "Your total expenses are "<< expense<< "\n";
+    } else { cout << "Your total expenses are "<< expense << "\n";}
+    return 0;
+}
