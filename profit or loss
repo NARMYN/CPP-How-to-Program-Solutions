@@ -1,0 +1,18 @@
+// Write a program to determine whether the seller has made profit or incurred loss. Also determine how much profit he made or loss he incurred. Cost price and selling price of an item is input by the user. 
+#include <iostream>
+using namespace std;
+int main() {
+    double costp, sellp, difference;
+    cout << "Enter the cost price of the item \n";
+    cin >> costp;
+    cout << "Enter the selling price of the item \n";
+    cin >> sellp;
+    if (sellp> costp){
+        difference = sellp - costp;
+        cout << "Your profit on this item is "<< difference << "\n";
+    } else if (costp > sellp) {
+        difference = costp - sellp;
+        cout << "Your loss on this item is "<< difference << "\n";
+    } else { cout << "you havent made a profit nor are you at a loss";}
+    return 0;
+}
