@@ -1,0 +1,14 @@
+//  Any year is input by the user. Write a program to determine whether the year is a leap year or not.
+#include <iostream>
+using namespace std;
+int main() {
+   int year;
+   cout << "Enter the year.\n";
+   cin >> year;
+   if ( year%4==0 and year%100==0 and year%400==0){
+       cout << "The year you entered is a leap year.\n";
+   } else {
+       cout << "The year you entered is not a leap year.\n";
+   }
+    return 0;
+}
