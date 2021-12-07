@@ -1,0 +1,22 @@
+//  If the ages of Ali, Rabia and Khan are input by the user, write a program to determine the youngest of the three. 
+#include <iostream>
+using namespace std;
+int main() {
+   double ali, rabia, khan;
+   cout << "Enter the age of Ali.\n";
+   cin >> ali;
+   cout<< "Enter the age of Rabia.\n";
+   cin >> rabia;
+   cout << "Enter the age of Khan.\n";
+   cin >> khan;
+   if (ali < rabia and ali < khan){
+       cout << "Ali is the youngest. \n";
+   } else if ( rabia< ali and rabia< khan){
+       cout << "Rabia is the youngest. \n";
+   } else if ( khan < ali and khan < rabia){
+       cout << "Khan is the youngest. \n";
+   } else if (rabia == ali or rabia == khan or ali== khan){
+       cout<< "Two or more have the same age";
+   }
+    return 0;
+}
