@@ -26,3 +26,4 @@ int main () {
 		cout << "the number you entered is out of range\n";
 		}
 	return 0;
+}
