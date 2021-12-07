@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+int main () {
+	int num, orignum, a,b,c,d,e, revnum;
+	cout<< "Enter a five digit number\n";
+	cin >> num;
+	orignum = num;
+	if ( num > 9999 && num < 100000) {
+		a = num % 10;
+		num = num /10;
+		b = num %10;
+		num = num / 10;
+		c= num % 10;
+		num = num /10;
+		d= num % 10;
+		num = num/10;
+		e = num %10;
+		num = num / 10;
+		revnum = (10000*a) + (1000 *b) + (100 *c) + (10 * d) + e;
+		if ( revnum == orignum) {
+			cout << "the number is a palindrome";
+		} else { 
+			cout << "The number is not a palindrome";
+			}
+	} else {
+		cout << "the number you entered is out of range\n";
+		}
+	return 0;
