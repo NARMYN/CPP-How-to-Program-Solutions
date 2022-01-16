@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+bool multiple(int a, int b){
+    int c;
+    bool isMultiple = false;
+    for (int x=1; x<=b; x++){
+        c = a*x;
+        if (c == b){
+            isMultiple = true;
+        }
+    }
+    return isMultiple;
+}
+int main(){
+    int num1, num2;
+    bool flag;
+    cout<< "Enter first number to check if its a divisor of second\n";
+    cin >> num1;
+    cout<< "Enter second number to check whether it is multiple of first\n";
+    cin >> num2;
+    while (num1!=(-1) and num2 !=(-1)){
+        flag = multiple(num1, num2);
+        if (flag == true){
+            cout << "second is a multiple of first\n";
+        }else {
+            cout << "Second is NOT a multiple of first\n";}
+        cout<< "Enter first number to check if its a divisor of second\n";
+        cin >> num1;
+        cout<< "Enter second number to check whether it is multiple of first\n";
+        cin >> num2;
+    }
+    return 0;
+}
