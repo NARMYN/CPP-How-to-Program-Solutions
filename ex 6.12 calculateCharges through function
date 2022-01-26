@@ -3,15 +3,20 @@ using namespace std;
 double calculateCharges( int hours){
     double charges = 0.00;
     double rate = 0.50;
+    while(hours>24){
+        cout<<"Enter appropriate hours\n";
+        cin >> hours;
+    }
     if (hours <=3){
         charges = 2.00;
     } else if (hours > 3 and hours <= 24){
         hours = hours - 3;
         charges = 2.00 + (hours*rate);
-    } else cout<< "Enter appropriate hours";
+    }
     if (charges > 10.00){
         charges = 10.00;
     }
+    
     return charges;
 }
 int main() {
@@ -32,5 +37,6 @@ int main() {
     cout << " 1\t\t"<< hrs1<<"   \t\t"<<" "<< cost1<<"\n";
     cout << " 2\t\t"<< hrs2<<"   \t\t"<<" "<< cost2<<"\n";
     cout << " 3\t\t"<< hrs3<<"   \t\t"<<" "<< cost3<<"\n";
+    cout << "Total \t"<< hrstotal<<"   \t\t"<<" "<<costtotal;
     return 0;
 }
