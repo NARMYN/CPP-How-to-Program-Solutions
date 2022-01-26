@@ -3,10 +3,6 @@ using namespace std;
 double calculateCharges( int hours){
     double charges = 0.00;
     double rate = 0.50;
-    while(hours>24){
-        cout<<"Enter appropriate hours\n";
-        cin >> hours;
-    }
     if (hours <=3){
         charges = 2.00;
     } else if (hours > 3 and hours <= 24){
@@ -24,12 +20,24 @@ int main() {
     double cost1, cost2, cost3 , costtotal=0.00;
     cout << "enter the hours first car parked\n";
     cin >> hrs1;
+    while(hrs1>24){
+        cout<<"Enter appropriate hours\n";
+        cin >> hrs1;
+    }
     cost1 = calculateCharges(hrs1);
     cout<< "Enter the hours the second car parked\n";
     cin >> hrs2;
+    while(hrs2>24){
+        cout<<"Enter appropriate hours\n";
+        cin >> hrs2;
+    }
     cost2 = calculateCharges(hrs2);
     cout<< "Enter the hours the third car parked\n";
     cin >> hrs3;
+    while(hrs3>24){
+        cout<<"Enter appropriate hours\n";
+        cin >> hrs3;
+    }
     cost3 = calculateCharges(hrs3);
     hrstotal = hrs1 + hrs2 + hrs3;
     costtotal = cost1 + cost2 + cost3;
