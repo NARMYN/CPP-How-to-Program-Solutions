@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main(){
+	int arr[8]= {1,2,3,4,5,6,7,8};
+	int num = 7;
+	int mid=0;
+	while(arr[mid] != num){
+		if (arr[mid]< num){
+			mid = (mid+7)/2;
+		} else if(arr[mid]> num){
+			mid = (mid+0)/2;
+		}
+	}
+	cout<<"The number is at index:"<< mid<<"\n";
+	cout << arr[mid];
+	return 0;
+}
