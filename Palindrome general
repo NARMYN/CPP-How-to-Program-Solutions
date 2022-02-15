@@ -1,0 +1,19 @@
+//Write a program in C++ to check whether a number is palindrome number or not.
+#include <iostream>
+using namespace std;
+int main(){
+	int num, numorig, revnum=0, digit;
+	cout<<"Enter a number\n";
+	cin>>numorig;
+	num=numorig;
+	while(num!=0){
+		digit= num%10;
+		num= num/10;
+		revnum = (revnum*10) +digit;
+	}
+	if(revnum == numorig){
+		cout<<"The number is a palindrome";
+	} else cout<< "number is not a Palindrome";
+
+	return 0;
+}
