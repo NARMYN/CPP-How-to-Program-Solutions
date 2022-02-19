@@ -1,0 +1,28 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main() {
+    int fincementbags, finbricks;
+    double cementbags, bricks, area, height, width, vol_mortar_per_brick= 0.00034;
+    cout<<"Enter the height of the wall in meters\n";
+    cin>> height;
+    cout<< "Enter the width of the wall in meters\n";
+    cin>> width;
+    do{
+        area = height* width;
+        bricks = 104 * area;
+        cementbags = 7* vol_mortar_per_brick * bricks;
+        fincementbags = ceil(1.05 * cementbags);
+        finbricks = ceil(1.025 * bricks);
+        cout<<"The number of Bricks required are"<< finbricks<< endl;
+        cout<< "The number of cement bags required are"<< fincementbags<<endl;
+        cout<<"Enter the height of the wall\n";
+        cin>> height;
+        cout<< "Enter the width of the wall\n";
+        cin>> width;
+    } while(height != -1);
+    
+
+    return 0;
+}
