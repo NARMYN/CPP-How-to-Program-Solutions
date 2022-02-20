@@ -1,0 +1,25 @@
+// guess the number game
+#include <iostream>
+using namespace std;
+int main(){
+    int num, guess;
+    
+    char play= 'Y';
+    num = rand()%100 +1;
+    while(play == 'Y'){
+    cout<<"Enter your guess";
+    cin>> guess;
+    while (guess!= num){
+        if (guess < num){
+            cout<< "Too low"<< endl;
+        } else cout<< "Too High\n";
+        cout<<"Enter your guess";
+        cin>> guess;
+    }
+    cout<< "Excellent! You guessed right!\n";
+    cout<< "Would you like to try again? Y or N\n";
+    cin >> play;
+    
+    }
+    return 0;
+}
