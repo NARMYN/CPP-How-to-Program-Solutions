@@ -5,7 +5,7 @@ int main(){
     int num, guess;
     
     char play= 'Y';
-    num = rand()%100 +1;
+    num = rand()%1000 +1;
     while(play == 'Y'){
     cout<<"Enter your guess";
     cin>> guess;
