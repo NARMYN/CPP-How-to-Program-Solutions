@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+void prime(int a, int b);
+int main(){
+    int num1, num2;
+    cout<<"Enter the initial value\n";
+    cin>>num1;
+    cout<<"Enter the final value\n";
+    cin>> num2;
+    prime(num1, num2);
+    return 0;
+}
+void prime(int a, int b){
+    int count;
+    for(int i = a; i<=b; i++){
+        count = 0;
+        for(int j=2; j<i; j++){
+            if (i%j==0){
+                count = count +1;
+            }
+        }
+        if(count==0){
+            cout<<i<<endl;
+        }
+    }
+}
