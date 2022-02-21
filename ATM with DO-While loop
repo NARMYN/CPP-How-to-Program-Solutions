@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+int main() {
+   int balance = 2500000;
+   int choice, deposit, withdrawal;
+   cout << "Enter the number for respective operations\n";
+       cout<< "Balance Enquiry: 1 \n";
+       cout << "Cash deposit: 2 \n";
+       cout << "Cash Withdrawal: 3 \n";
+       cin>> choice;
+   do{
+       switch(choice){
+           case 1:
+                cout <<"Your balance is: "<< balance;
+                break;
+           case 2:
+                cout<< "Enter the amount to be deposited\n";
+                cin >> deposit;
+                balance = balance + deposit;
+                cout <<"Your amount has been depostied\n";
+                break;
+           case 3:
+                cout << "Enter the amount to be withdrawed\n";
+                cin>> withdrawal;
+                if (withdrawal<= balance){
+                    balance = balance - withdrawal;
+                }else {cout<< "Balance is not enough\n";}
+                break;
+          default:
+                cout << "Enter a valid value\n";
+                break;
+       }
+       cout << "Enter the number for respective operations\n";
+       cout<< "Balance Enquiry: 1 \n";
+       cout << "Cash deposit: 2 \n";
+       cout << "Cash Withdrawal: 3 \n";
+       cout <<"Enter -1 to quit\n";
+       cin>> choice;
+   }while(choice!=-1);
+   
+    return 0;
+}
