@@ -1,0 +1,65 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+void question(int a, int b);
+void goodresponse();
+void badresponse();
+int main() {
+    srand(time(0));
+    int num, answer, x, y, fin;
+    do{
+        x= rand()%10;
+        y= rand()%10;
+        answer= x*y;
+        question(x,y);
+        cin>> num;
+        while(num != answer){
+            badresponse();
+            question(x,y);
+            cin>>num;
+        }
+        goodresponse();
+        cout<<"Press any number to continue. '-1' to quit"<<endl;
+        cin>>fin;
+    }while(fin!=-1);
+    
+    return 0;
+}
+void question(int a, int b){
+    cout<< "How much is "<<a<<" times"<<b<<"?\n";
+}
+void goodresponse(){
+    int a;
+    a = rand()%4 +1;
+    switch(a){
+        case 1:
+            cout<<"Very Good!"<< endl;
+            break;
+        case 2:
+            cout<<"Excellent!"<< endl;
+            break;
+        case 3:
+            cout<<"Nice Work!"<< endl;
+            break;
+        case 4:
+            cout<<"Keep up the good work!"<< endl;
+            break;
+    }
+}
+void badresponse(){
+    int a = rand()%4 +1;
+    switch(a){
+        case 1:
+            cout<<"No. Please Try Again!"<<endl;
+            break;
+        case 2:
+            cout<<"Wrong. Try Once More."<<endl;
+            break;
+        case 3:
+            cout<<"Don't give up!"<<endl;
+            break;
+        case 4:
+            cout<<"No. Keep Trying"<<endl;
+            break;
+    }
+}
