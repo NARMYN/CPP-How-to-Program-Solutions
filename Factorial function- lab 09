@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int factorial(int a);
+int main() {
+   int num, fact;
+   cout<<"Enter the number to find its factorial value\n";
+   cin>> num;
+   fact = factorial(num);
+   cout<<"The factorial value is: "<< fact<<endl;
+   return 0;
+}
+int factorial(int a){
+    int result=1;
+    for (int i = 1; i <=a; i++){
+        result = result*i;
+    }
+    return result;
+}
