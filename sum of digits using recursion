@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int sum(int num);
+int main(){
+    int number, sumdig;
+    cout<<"Enter the number to find digits\n";
+    cin>> number;
+    sumdig = sum(number);
+    cout<<"The sum of digits is "<<sumdig;
+    return 0;  
+}
+int sum(int num){
+    int digit;
+    digit = num%10;
+    num = num/10;
+    if (num>0){
+        return (digit+sum(num));
+    } else return digit;
+    
+}
