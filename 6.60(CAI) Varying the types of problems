@@ -2,7 +2,7 @@
 #include <iostream>
 
 using namespace std;
-double correctans(int c, int d, int typ);
+float correctans(float c, float d, int typ);
 void question(int a, int b, int typ_e);
 void goodresponse();
 void badresponse();
@@ -45,7 +45,7 @@ int main() {
     
     return 0;
 }
-double correctans(int c, int d, int typ){
+float correctans(float c, float d, int typ){
     int ans;
     if(typ==5){
         typ = rand()%4 + 1;
@@ -63,7 +63,9 @@ double correctans(int c, int d, int typ){
             ans = c*d;
             break;
         case 4:
-            ans = d/c;
+            if(c>d){
+                ans= c/d;
+            } else ans = d/c;
             break;
     }
     return ans;
@@ -83,7 +85,9 @@ void question(int a, int b, int typ_e){
             cout<<"How much is "<<a<<" times "<<b<<" ?"<<endl;
             break;
         case 4:
-            cout<<"How much is "<<a<<" divided by "<<b<<" ?"<<endl;
+            if(a>b){
+                cout<<"How much is "<<b<<" divided by "<<a<<" ?"<<endl;
+            } else cout<<"How much is "<<a<<" divided by "<<b<<" ?"<<endl;
             break;
     }
 }
@@ -123,7 +127,7 @@ void badresponse(){
     }
 }
 int diff_level(int a){
-    int num = 10;
+    int num = 1;
     for(int i =0; i<a; i++){
         num = num *10;
     }
