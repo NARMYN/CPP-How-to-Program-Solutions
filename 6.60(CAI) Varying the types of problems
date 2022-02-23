@@ -21,8 +21,8 @@ int main() {
         cin>>difficulty;
         nodigspec= diff_level(difficulty);
         do{
-            x= rand()%(nodigspec);
-            y= rand()%(nodigspec);
+            x= rand()%nodigspec;
+            y= rand()%nodigspec;
             answer = correctans(x, y, pblmtype);
             question(x, y, pblmtype);
             cin>> num;
@@ -124,8 +124,8 @@ void badresponse(){
 }
 int diff_level(int a){
     int num = 10;
-    for(int i =1; i<=a; i++){
+    for(int i =0; i<a; i++){
         num = num *10;
-        return num;
     }
+    return num;
 }
