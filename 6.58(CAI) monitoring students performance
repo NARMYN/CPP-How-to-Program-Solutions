@@ -17,14 +17,16 @@ int main() {
             answer= x*y;
             question(x,y);
             cin>> num;
-            while(num != answer){
+            while((num != answer) and (badcount<=10)){
                 badcount = badcount +1;
                 badresponse();
                 question(x,y);
                 cin>>num;
             }
-            goodresponse();
-            goodcount = goodcount+1;
+            if(num == answer){
+                goodresponse();
+                goodcount = goodcount+1;
+            }
             count = goodcount + badcount;
             
         }while(count<10);
