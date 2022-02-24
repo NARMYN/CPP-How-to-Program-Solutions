@@ -1,0 +1,30 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+int main(){
+    int num;
+    do{
+        cout<<"Enter an odd number"<<endl;
+        cin>>num;
+    }while(num%2 ==0);
+    int count1=(num+1)/2, count2 = num- count1; 
+    for(int i=1; i<=num; i++){
+        cout<<endl;
+        if(i<(num+1)/2){
+            count1 = count1 - 1;
+            count2 = count2 + 1;
+        }else {
+            count1= count1+1;
+            count2 = count2 -1;
+        }
+        for (int j =1; j<=num; j++){
+            if(j<=count1 or j>count2){
+                cout<<" ";
+                continue;
+            }
+            cout<<"*";
+        }
+        
+    }
+    return 0;
+}
