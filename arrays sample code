@@ -1,0 +1,167 @@
+task1:
+#include<iostream>// allows program
+using namespace std;
+#include<iomanip>
+
+int main()
+{
+char char_array[10];
+float float_array[10];
+
+// initialize elements of array n to 0
+
+for ( int i = 0; i < 10; i++ )
+{
+	cout<<"Enter the float value of element number "<<i<<endl; //taking user input
+	cin>>float_array[ i ];
+
+	cout<<"Enter the character of element number "<<i<<endl; //taking user input
+	cin>>char_array[ i ];
+}
+cout <<"\nElement"<< setw( 13 ) <<"Value"<< setw( 13 ) <<"Character"<< endl;
+
+// output each array element's value and character
+for ( int j = 0; j < 10; j++ ){
+
+	cout << setw( 7 ) << j << setw( 13 ) << float_array[ j ] << setw( 13 ) << char_array[ j ] << endl;
+	
+} // end main
+
+return 0;
+}
+
+Task2:
+
+#include<iostream>
+using namespace std;
+#include<iomanip>
+
+void primenumber(int my_array[], int len_arr);
+
+int main()
+{
+    const int arraySize = 5; // size of array a
+    int a[ arraySize ]; // initializing array a
+
+    //Asking for user input
+    for ( int i = 0; i < arraySize; i++ ){
+        cout<<"Enter number for this element";
+        cin>> a[i];
+        cout << endl;
+    }
+    //Determining if the numbers are prime
+    primenumber( a, arraySize);
+
+    return 0;
+} // end main
+
+//Defining function
+void primenumber(int my_array[], int len_arr){  
+    int my_num;
+
+    //Iterating for every element and displaying if its prime or not
+    for (int j=0; j< len_arr; j++){   
+        int flag = 1;
+        my_num = my_array[j];
+
+        //Loop to determine if element is not prime(sets flag to 0)
+        for (int k = 2; k<= (my_num+1)/2; k++){
+            if (my_num%k==0){
+                flag = 0;
+                cout<<"The number "<<my_num<<" at element "<<j<<" is Not Prime\n";
+                break;
+            }
+        }
+        if(flag==1){
+            cout<<"The number "<<my_num<<" at element "<<j<<" is Prime\n";
+        }
+    }
+}
+
+Task3:
+
+#include<iostream>
+using namespace std;
+void linearSearch( const int [], int ); //function prototype
+void ascend_sort( int [], int );
+void descend_sort( int [], int );
+int main()
+{
+    const int arraySize = 10; // size of array a
+    int a[ arraySize ]; // creating array a
+    int searchKey; // value to be located in array a
+    for ( int i = 0; i < arraySize; i++ ){
+        cout<<"Enter a number"<<endl;
+        cin>> a[i]; // inserting data in the array
+    }
+    bool choice;
+    cout<< "Do you want a linear search?"<<endl;
+    cin>>choice;
+    if (choice==true){
+         linearSearch( a, arraySize ); // attempt to locate searchKey in array a
+    } else{
+        cout<<"Do you want to arrange in ascending order?"<<endl;
+        cin>> choice;
+        if( choice == true){
+            ascend_sort(a, 10);
+
+        } else{
+            cout<<"Do you want to arrange in descending order?"<<endl;
+            cin>> choice;
+            if( choice == true){
+                descend_sort(a, 10);
+            }
+        }
+    }    
+    
+    //printing the resulting array
+    cout<<"The resulting array has following elements"<<endl;
+    for (int j=0; j<arraySize; j++){
+        cout<<a[j]<<endl;
+    }
+    return 0; // indicates successful termination
+} // end main
+
+// function compares key to every element of array until location is
+// found or until end of array is reached
+void linearSearch( const int array[], int sizeOfArray ) {
+    int searchKey, element;
+    cout <<"Enter integer search key: ";
+    cin >> searchKey; // number to be searched in array taken as input
+    for ( int j = 0; j < sizeOfArray; j++ )
+    if ( array[ j ] == searchKey ){ // if found,
+        element = j; // saves location of key in element
+    } else{
+        element = -1; // key not found
+    }
+    if ( element != -1 ){
+        cout <<"Found value in element "<< element << endl;
+    }
+    else{
+        cout <<"Value not found"<< endl;
+    }
+} // end function linearSearch
+void ascend_sort(int array[], int arraysize=10){
+    int temp;
+    for (int j=0; j<arraysize-1; j++){
+        for (int i=0; i<arraysize; i++){
+            if (array[i]>array[i+1]){
+                temp = array[i];
+                array[i]= array[i+1];
+                array[i+1] = temp;
+            }
+        }
+    }
+}
+void descend_sort(int array[], int arraysize =10){
+    int temp;
+    for (int j=0; j<arraysize-1; j++){
+        for (int i=0; i<arraysize; i++){
+            if (array[i]<array[i+1]){
+                temp = array[i];
+                array[i]= array[i+1];
+                array[i+1] = temp;
+            }
+        }
+    }
+}
