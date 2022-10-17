@@ -1,0 +1,19 @@
+//Write a program to find the factorial of a number using pointers.
+#include <iostream>
+using namespace std;
+void factorial( int *);
+int main(){
+    int num1;
+    cout<<"Enter Number to find factorial"<<endl;
+    cin>>num1;
+    factorial(&num1);
+    return 0;
+}
+void factorial(int *numptr){
+    int fact=1;
+    while(*numptr > 1){
+        fact = fact * (*numptr);
+        *numptr = *numptr -1;
+    }
+    cout<<"The factorial is "<<fact<<endl;
+}
