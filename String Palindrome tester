@@ -7,14 +7,14 @@ bool testPalindrome( const char [], int, int );
 int main() {
     const int SIZE = 80;
     char c, string[ SIZE ], copy[ SIZE ];
-    int count = 0, copyCount, i;
+    int count = 0, copyCount=0;
     cout << "Enter a sentence:\n";
     while ( ( c = cin.get() ) != '\n' && count < SIZE ){
         string[ count++ ] = c;
     }
     string[ count ] = '\0'; // terminate cstring
     // make a copy of cstring without spaces
-    for ( copyCount = 0, i = 0; string[ i ] != '\0'; ++i ){
+    for ( int i = 0; string[ i ] != '\0'; ++i ){
         if ( string[ i ] != ' ' ){
             copy[ copyCount++ ] = string[ i ];
         }
