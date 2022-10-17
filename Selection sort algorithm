@@ -1,0 +1,51 @@
+
+//Write recursive function selectionSort to perform Selection Sort A selection sort searches an array looking for the smallest element in the array.
+//Then, the smallest element is swapped with the first element of the array.
+//The process is repeated for the subarray beginning with the second element of the array.
+// Exercise 4.31 Solution
+#include <iostream>
+
+using namespace std;
+
+#include <cstdlib>
+#include <ctime>
+
+void selectionSort( int [], int );
+
+int main()
+{
+    const int SIZE = 10, MAXRANGE = 1000;
+    int sortThisArray[ SIZE ] = { 1, 9, 123, 132, 01, 3, 5, 312, 2, 90 };
+
+
+    cout << "\nUnsorted array is:\n";
+    for ( int j = 0; j < SIZE; ++j ){
+        cout << ' ' << sortThisArray[ j ] << ' ';
+    }
+
+    selectionSort( sortThisArray, SIZE );
+
+    cout << "\n\nSorted array is:\n";
+    for ( int k = 0; k < SIZE; ++k ){
+        cout << ' ' << sortThisArray[ k ] << ' ';
+    }
+    cout << '\n' << endl;
+
+    return 0;
+}
+
+void selectionSort( int array[], int size ){
+    int temp;
+
+    if ( size >= 1 ) {
+
+        for ( int loop = 0; loop < size; ++loop ){
+            if ( array[ loop ] < array[ 0 ] ) {
+                temp = array[ loop ];
+            array[ loop ] = array[ 0 ];
+            array[ 0 ] = temp;
+            }
+        }
+    selectionSort( &array[ 1 ], size - 1 );
+    }
+}
